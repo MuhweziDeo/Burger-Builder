@@ -21,7 +21,8 @@ class App extends Component {
         {name:"deo", age:"27"},
         {name:"aggrey", age:"34"},
   
-      ]
+      ],
+      showPersons:false
     }
     
     )
@@ -41,6 +42,9 @@ class App extends Component {
     
     )
   };
+  togglePersonHandler=()=>{
+
+  };
   render() {
     const style={
       color:'red'
@@ -49,10 +53,16 @@ class App extends Component {
     <div className="App">
       <h1>Hello</h1>
       {/* user bind method as opposed to arrow function */}
-      <button style={style} onClick={()=>this.switchNameHandler('deo arrow function')}>Click Me</button>
+      <button style={style} onClick={this.togglePersonHandler}>Click Me</button>
+      { this.togglePersonHandler===true ?
+      // code for if its true
+      <div>
       <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
       <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'deo the bind way')}/>
       <Person name={this.state.persons[2].name} age={this.state.persons[2].age} changed={this.changeNameHandler} />
+      </div>
+      :null}
+    
     </div>
     );
     // return React.createElement('div',{className:'App'},React.createElement('h1',null,'updated'))
