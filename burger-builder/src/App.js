@@ -42,11 +42,14 @@ class App extends Component {
     )
   };
   render() {
+    const style={
+      color:'red'
+    }
     return (
     <div className="App">
       <h1>Hello</h1>
       {/* user bind method as opposed to arrow function */}
-      <button onClick={()=>this.switchNameHandler('deo arrow function')}>Click Me</button>
+      <button style={style} onClick={()=>this.switchNameHandler('deo arrow function')}>Click Me</button>
       <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
       <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'deo the bind way')}/>
       <Person name={this.state.persons[2].name} age={this.state.persons[2].age} changed={this.changeNameHandler} />
