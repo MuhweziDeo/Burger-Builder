@@ -30,7 +30,8 @@ class App extends Component {
     return (
     <div className="App">
       <h1>Hello</h1>
-      <button onClick={this.switchNameHandler}>Click Me</button>
+      {/* user bind method as opposed to arrow function */}
+      <button onClick={()=>this.switchNameHandler('deo arrow function')}>Click Me</button>
       <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
       <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'deo the bind way')}/>
       <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
