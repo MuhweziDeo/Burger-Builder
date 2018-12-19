@@ -25,7 +25,22 @@ class App extends Component {
     }
     
     )
-  }
+  };
+
+  changeNameHandler=(event)=>{
+    console.log('1222')
+    console.log(event.target)
+    this.setState({
+      persons:[
+        {name:'dee', age:"24"},
+        {name: 'deo',age:"27"},
+        {name:event.target.value, age:"34"},
+  
+      ]
+    }
+    
+    )
+  };
   render() {
     return (
     <div className="App">
@@ -34,7 +49,7 @@ class App extends Component {
       <button onClick={()=>this.switchNameHandler('deo arrow function')}>Click Me</button>
       <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
       <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'deo the bind way')}/>
-      <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+      <Person name={this.state.persons[2].name} age={this.state.persons[2].age} changed={this.changeNameHandler} />
     </div>
     );
     // return React.createElement('div',{className:'App'},React.createElement('h1',null,'updated'))
