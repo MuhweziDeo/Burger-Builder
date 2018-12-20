@@ -6,9 +6,9 @@ class App extends Component {
   // states are on only avialable in class components not function components
   state={
     persons:[
-      {name:"dee", age:"24"},
-      {name:"deo", age:"27"},
-      {name:"aggrey", age:"34"},
+      {id:"1",name:"dee", age:"24"},
+      {id:"2",name:"deo", age:"27"},
+      {id:"5",name:"aggrey", age:"34"},
 
     ],
     showPersons:false
@@ -16,18 +16,26 @@ class App extends Component {
   }
  
 
-  changeNameHandler=(event)=>{
+  changeNameHandler=(event,id)=>{
     console.log('1222')
     console.log(event.target)
-    this.setState({
-      persons:[
-        {name:'dee', age:"24"},
-        {name: 'deo',age:"27"},
-        {name:event.target.value, age:"34"},
-  
-      ]
-    }
-    
+    // find person
+    const personIndex=this.state.persons.findIndex(p => {
+      console.log(p.id)
+      return p.id ===id;
+    })
+    console.log(personIndex)
+    // create copy of array not to change original
+    const person=this.state.persons[personIndex];
+    // new person
+    console.log(person)
+    person.name=event.target.value;
+    // current person
+    const persons=[...this.state.persons]
+    console.log('##############',persons)
+    persons[personIndex]=person;
+
+    this.setState({persons:persons}
     )
   };
   deletePersonHandler=(personIndex)=>{
@@ -56,9 +64,9 @@ class App extends Component {
       persons=(
         <div>
           {this.state.persons.map(
-            (person,index)=>{
-              console.log(index)
-              return <Person name={person.name} age={person.age} click={()=>this.deletePersonHandler(index)} key={index}/>
+            (person,id)=>{
+              console.log(id)
+              return <Person name={person.name} age={person.age} click={()=>this.deletePersonHandler(person.id)} key={id} changed={(event)=>this.changeNameHandler(event,person.id)}/>
             }
           )};
 
