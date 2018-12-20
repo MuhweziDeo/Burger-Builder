@@ -6,7 +6,7 @@ class App extends Component {
   // states are on only avialable in class components not function components
   state={
     persons:[
-      {id:"1",name:"dee", age:"24"},
+      {id:"1",name:"de", age:"24"},
       {id:"2",name:"deo", age:"27"},
       {id:"5",name:"aggrey", age:"34"},
 
@@ -17,18 +17,19 @@ class App extends Component {
  
 
   changeNameHandler=(event,id)=>{
-    console.log('1222')
-    console.log(event.target)
+    // console.log('1222')
+    // console.log(event.target)
     // find person
+    // console.log(this.state.persons[0].name)
     const personIndex=this.state.persons.findIndex(p => {
-      console.log(p.id)
+      console.log(p.name)
       return p.id ===id;
     })
-    console.log(personIndex)
+    // console.log(personIndex)
     // create copy of array not to change original
     const person=this.state.persons[personIndex];
     // new person
-    console.log(person)
+    // console.log(person)
     person.name=event.target.value;
     // current person
     const persons=[...this.state.persons]
@@ -76,9 +77,14 @@ class App extends Component {
         </div>
       )
     }
+    let classes=[];
+    if (this.state.persons.length<=2){
+      classes.push('red')
+
+    }
     return (
     <div className="App">
-      <h1>Hello</h1>
+      <h1 className={classes}>Hello</h1>
       {/* user bind method as opposed to arrow function */}
       <button style={style} onClick={this.togglePersonHandler}>Click Me</button>
       {persons}
