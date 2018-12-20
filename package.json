@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MuhweziDeo/Burger-Builder/issues"
   },
-  "homepage": "https://github.com/MuhweziDeo/Burger-Builder#readme"
+  "homepage": "https://github.com/MuhweziDeo/Burger-Builder#readme",
+  "dependencies": {
+    "radium": "^0.25.1"
+  }
 }
