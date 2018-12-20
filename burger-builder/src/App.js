@@ -10,9 +10,11 @@ class App extends Component {
       {name:"deo", age:"27"},
       {name:"aggrey", age:"34"},
 
-    ]
+    ],
+    showPersons:false
   
   }
+ 
   switchNameHandler=(newName)=>{
     console.log('1222')
     this.setState({
@@ -21,13 +23,11 @@ class App extends Component {
         {name:"deo", age:"27"},
         {name:"aggrey", age:"34"},
   
-      ],
-      showPersons:false
+      ]
     }
     
     )
   };
-
   changeNameHandler=(event)=>{
     console.log('1222')
     console.log(event.target)
@@ -43,6 +43,9 @@ class App extends Component {
     )
   };
   togglePersonHandler=()=>{
+    const doesShow=this.state.showPersons;
+    console.log(doesShow);
+    this.setState({showPersons:!doesShow})
 
   };
   render() {
@@ -54,14 +57,16 @@ class App extends Component {
       <h1>Hello</h1>
       {/* user bind method as opposed to arrow function */}
       <button style={style} onClick={this.togglePersonHandler}>Click Me</button>
-      { this.togglePersonHandler===true ?
+      { 
+      this.state.showPersons === true ?
       // code for if its true
       <div>
       <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
       <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'deo the bind way')}/>
       <Person name={this.state.persons[2].name} age={this.state.persons[2].age} changed={this.changeNameHandler} />
       </div>
-      :null}
+      :null
+      }
     
     </div>
     );
