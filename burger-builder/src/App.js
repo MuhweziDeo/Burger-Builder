@@ -52,22 +52,22 @@ class App extends Component {
     const style={
       color:'red'
     }
+    let persons=null;
+    if(this.state.showPersons){
+      persons=(
+        <div>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'deo the bind way')}/>
+        <Person name={this.state.persons[2].name} age={this.state.persons[2].age} changed={this.changeNameHandler} />
+        </div>
+      )
+    }
     return (
     <div className="App">
       <h1>Hello</h1>
       {/* user bind method as opposed to arrow function */}
       <button style={style} onClick={this.togglePersonHandler}>Click Me</button>
-      { 
-      this.state.showPersons === true ?
-      // code for if its true
-      <div>
-      <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-      <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'deo the bind way')}/>
-      <Person name={this.state.persons[2].name} age={this.state.persons[2].age} changed={this.changeNameHandler} />
-      </div>
-      :null
-      }
-    
+      {persons}
     </div>
     );
     // return React.createElement('div',{className:'App'},React.createElement('h1',null,'updated'))
