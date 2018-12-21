@@ -1,19 +1,8 @@
 {
-  "name": "burger-builder-react",
+  "name": "Burger-builder-react",
   "version": "1.0.0",
-  "description": "- A react app for making burgers",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MuhweziDeo/Burger-Builder.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MuhweziDeo/Burger-Builder/issues"
-  },
-  "homepage": "https://github.com/MuhweziDeo/Burger-Builder#readme"
+  "repository": "https://github.com/MuhweziDeo/Burger-Builder.git",
+  "author": "muhwezi deo <aggrey256@gmail.com>",
+  "license": "MIT"
 }
