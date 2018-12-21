@@ -1,7 +1,7 @@
  import React, { Component } from 'react';
-
 import './App.css';
-import Person from  '../components/Persons/Person/Person'
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../Cockpit/Cockpit';
 class App extends Component {
   // states are on only avialable in class components not function components
   state={
@@ -57,19 +57,12 @@ class App extends Component {
 
   };
   render() {
-    const style={
-      color:'red'
-    }
     let persons=null;
     if(this.state.showPersons){
       persons=(
         <div>
-          {this.state.persons.map(
-            (person,id)=>{
-              console.log(id)
-              return <Person name={person.name} age={person.age} click={()=>this.deletePersonHandler(person.id)} key={id} changed={(event)=>this.changeNameHandler(event,person.id)}/>
-            }
-          )};
+          <Persons persons={this.state.persons} click={this.deletePersonHandler} changed={this.changeNameHandler}/>
+       
 
         {/* <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'deo the bind way')}/>
@@ -77,17 +70,10 @@ class App extends Component {
         </div>
       )
     }
-    let classes=[];
-    if (this.state.persons.length<=2){
-      classes.push('red')
-
-    }
     return (
     <div className="App">
-      <h1 className={classes}>Hello</h1>
-      {/* user bind method as opposed to arrow function */}
-      <button style={style} onClick={this.togglePersonHandler}>Click Me</button>
-      {persons}
+    <Cockpit showPersons={this.state.showPersons} persons={this.state.persons} clicked={this.togglePersonHandler} />{persons} 
+     
     </div>
     );
     // return React.createElement('div',{className:'App'},React.createElement('h1',null,'updated'))
