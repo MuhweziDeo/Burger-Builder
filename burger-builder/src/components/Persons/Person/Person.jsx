@@ -14,6 +14,13 @@ class Persons extends Component{
       componentDidMount(){
         console.log('inside component did mount')
       }
+      componentWillReceiveProps(nextProps){
+          console.log('inside will recieve props',nextProps)
+      }
+      shouldComponentUpdate = (nextProps, nextState) => {
+        return false;
+      }
+      
     render(){
         return(
             <div className='Person'>
