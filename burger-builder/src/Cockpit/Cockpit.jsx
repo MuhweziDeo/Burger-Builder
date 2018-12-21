@@ -11,7 +11,7 @@ const cockpit=(props)=>{
     }
     return (
         <div>
-            <h1 className={classes}>Hello</h1>
+            <h1 className={classes}>{props.appTitle}</h1>
         <button style={style} onClick={props.clicked}>Click Me</button>
         </div>
         
