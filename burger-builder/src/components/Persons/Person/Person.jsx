@@ -2,6 +2,18 @@ import React,{Component} from 'react';
 import './Person.css';
 
 class Persons extends Component{
+    constructor(props){
+        super()
+        console.log(super())
+        console.log('constructor',props)
+      }
+      componentWillMount(){
+        console.log('inside component will mount')
+      }
+    
+      componentDidMount(){
+        console.log('inside component did mount')
+      }
     render(){
         return(
             <div className='Person'>

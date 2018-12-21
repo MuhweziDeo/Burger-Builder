@@ -4,16 +4,38 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../Cockpit/Cockpit';
 class App extends Component {
   // states are on only avialable in class components not function components
-  state={
-    persons:[
-      {id:"1",name:"de", age:"24"},
-      {id:"2",name:"deo", age:"27"},
-      {id:"5",name:"aggrey", age:"34"},
-
-    ],
-    showPersons:false
+  constructor(props){
+    super()
+    console.log(super())
+    console.log('constructor',props)
+    this.state={
+      persons:[
+        {id:"1",name:"de", age:"24"},
+        {id:"2",name:"deo", age:"27"},
+        {id:"5",name:"aggrey", age:"34"},
   
+      ],
+      showPersons:false
+    
+    }
   }
+  componentWillMount(){
+    console.log('inside component will mount')
+  }
+
+  componentDidMount(){
+    console.log('inside component did mount')
+  }
+  // state={
+  //   persons:[
+  //     {id:"1",name:"de", age:"24"},
+  //     {id:"2",name:"deo", age:"27"},
+  //     {id:"5",name:"aggrey", age:"34"},
+
+  //   ],
+  //   showPersons:false
+  
+  // }
  
 
   changeNameHandler=(event,id)=>{
@@ -57,6 +79,7 @@ class App extends Component {
 
   };
   render() {
+    console.log('inside render')
     let persons=null;
     if(this.state.showPersons){
       persons=(
