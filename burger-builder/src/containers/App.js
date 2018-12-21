@@ -39,10 +39,6 @@ class App extends Component {
  
 
   changeNameHandler=(event,id)=>{
-    // console.log('1222')
-    // console.log(event.target)
-    // find person
-    // console.log(this.state.persons[0].name)
     const personIndex=this.state.persons.findIndex(p => {
       console.log(p.name)
       return p.id ===id;
