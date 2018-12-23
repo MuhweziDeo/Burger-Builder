@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './BurgerControl.css';
+import classes from './BuildControl.css';
 const buildControl=(props)=>(
   <div  className={classes.BuildControl}>
     <div className={classes.Label}>
-      {props.label}</div>
+      {props.label} </div>
     <button className={classes.Less}>Less</button>
     <button className={classes.More}>More</button>
   </div>
-);
+)
 export default buildControl;
