@@ -14,7 +14,7 @@ class BurgerIngredient extends Component{
                     <div className={classes.BreadTop}>
                         <div className={classes.Seeds1}></div>
                         <div className={classes.Seeds2}></div>
-    
+
                     </div>
                 );
                 break;
@@ -24,16 +24,19 @@ class BurgerIngredient extends Component{
             case('bacon'):
                 ingredient=<div className={classes.Bacon}></div>;
                 break;
-            case('salaf'):
+            case('salad'):
                 ingredient=<div className={classes.Salad}></div>;
+                break;
+            case('meat'):
+              ingredient=<div className={classes.Meat}></div>;
                 break;
             default:
                 ingredient=null;
-       
-            };  
-            return ingredient    
+
+            };
+            return ingredient
         }
-    
+
 };
 // validate props
 BurgerIngredient.propTypes={
