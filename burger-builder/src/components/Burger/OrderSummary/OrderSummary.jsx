@@ -12,6 +12,7 @@ return(
   <ul>
   {ingredientSummary}
   </ul>
+  <p>Total price: <strong>{props.price}</strong></p>
 <p>Continue checking out</p>
 <Button btnType='Danger' clicked={props.purchasedCanceled}>CANCEL</Button>
 <Button btnType='Success' clicked={props.purchaseContinue}>CONTINUE</Button>
