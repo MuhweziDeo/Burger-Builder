@@ -12,6 +12,8 @@ return(
   {ingredientSummary}
   </ul>
 <p>Continue checking out</p>
+<button>CANCEL</button>
+<button>CONTINUE</button>
 
   </Aux>
 )
