@@ -4,4 +4,4 @@ const instance=axios.create({
   baseURL:'https://react-burger-builder-fc34a.firebaseio.com/'
 })
 
-export default instance;
+export default instance; 
